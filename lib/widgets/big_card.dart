@@ -62,7 +62,8 @@ class BigCard extends StatelessWidget {
                         child: Text(
                           orginizers.join(' '),
                           style: TextStyle(
-                              color: organizerHighlightColor,
+                              //TODO Change color to organizer highlight color
+                              color: Colors.black,
                               fontWeight: FontWeight.bold),
                         ),
                       ),
