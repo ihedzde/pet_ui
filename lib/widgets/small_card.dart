@@ -6,10 +6,12 @@ class SmallCard extends StatelessWidget {
   final String imageUrl;
   final Color textColor;
   final Color tileColor;
+  final double imageBottomOffeset;
   SmallCard(
     this.imageUrl, {
     this.title='',
-    this.textColor = Colors.black,
+    this.textColor = Colors.white,
+    this.imageBottomOffeset = 0,
     this.tileColor = Colors.teal,
   });
   @override
@@ -28,16 +30,17 @@ class SmallCard extends StatelessWidget {
             height: 90,
           ),
           Positioned(
+            bottom: imageBottomOffeset,
             right: -10,
-            child: Image.network(imageUrl, width: 150, fit: BoxFit.fitWidth),
+            child: Image.network(imageUrl, width: 140, fit: BoxFit.fitWidth),
           ),
           Positioned(
             left: 20,
-            top: 60,
+            bottom: 45,
             child: Text(
               title,
               style: regularText.copyWith(
-                  color: textColor, fontSize: 12, fontWeight: FontWeight.bold),
+                  color: textColor, fontSize: 16, fontWeight: FontWeight.bold),
             ),
           ),
         ],
