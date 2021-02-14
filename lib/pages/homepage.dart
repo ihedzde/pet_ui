@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         backgroundColor: Colors.grey[200],
         body: SafeArea(child: _children[_currentIndex]),
-        bottomNavigationBar: Platform.isAndroid
+        bottomNavigationBar: false//Platform.isAndroid
             ? BottomNavigationBar(
                 currentIndex: _currentIndex,
                 onTap: _changeIndex,
