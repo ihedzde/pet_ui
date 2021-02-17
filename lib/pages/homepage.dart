@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pet_ui/widgets/home_tab.dart';
@@ -29,9 +29,25 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: SafeArea(child: _children[_currentIndex]),
-      bottomNavigationBar: false //Platform.isAndroid - doesn't work in Flutlab
+      bottomNavigationBar: kIsWeb //Platform.isAndroid - doesn't work in Flutlab
       //TODO choose bottomNavBar
-          ? BottomNavigationBar(
+          ? CupertinoTabBar(
+              currentIndex: _currentIndex,
+              onTap: _changeIndex,
+              items: [
+                BottomNavigationBarItem(
+                    icon: Icon(CupertinoIcons.home), label: "Home"),
+                BottomNavigationBarItem(
+                    icon: Icon(CupertinoIcons.search), label: "Search"),
+                BottomNavigationBarItem(
+                    icon: Icon(CupertinoIcons.book), label: "Articles"),
+                BottomNavigationBarItem(
+                    icon: Icon(CupertinoIcons.bell), label: "Notification"),
+                BottomNavigationBarItem(
+                    icon: Icon(CupertinoIcons.person), label: "Profile"),
+              ],
+            )
+          : BottomNavigationBar(
               currentIndex: _currentIndex,
               onTap: _changeIndex,
               type: BottomNavigationBarType.fixed,
@@ -47,22 +63,6 @@ class _HomePageState extends State<HomePage> {
                     label: "Notification"),
                 BottomNavigationBarItem(
                     icon: Icon(Icons.person_outline), label: "Profile"),
-              ],
-            )
-          : CupertinoTabBar(
-              currentIndex: _currentIndex,
-              onTap: _changeIndex,
-              items: [
-                BottomNavigationBarItem(
-                    icon: Icon(CupertinoIcons.home), label: "Home"),
-                BottomNavigationBarItem(
-                    icon: Icon(CupertinoIcons.search), label: "Search"),
-                BottomNavigationBarItem(
-                    icon: Icon(CupertinoIcons.book), label: "Articles"),
-                BottomNavigationBarItem(
-                    icon: Icon(CupertinoIcons.bell), label: "Notification"),
-                BottomNavigationBarItem(
-                    icon: Icon(CupertinoIcons.person), label: "Profile"),
               ],
             ),
     );
