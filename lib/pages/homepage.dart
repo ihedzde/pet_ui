@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: SafeArea(child: _children[_currentIndex]),
-      bottomNavigationBar: kIsWeb //Platform.isAndroid - doesn't work in Flutlab
+      bottomNavigationBar: kIsWeb //Platform.isAndroid - doesn't work on Web builds
       //TODO choose bottomNavBar
           ? CupertinoTabBar(
               currentIndex: _currentIndex,
