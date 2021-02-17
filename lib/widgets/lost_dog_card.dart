@@ -34,8 +34,8 @@ class LostDogCard extends StatelessWidget {
               ),
               Text(
                 //TODO Replace 🐶 with dog's name.
-                  "🐶 is lost in your neighborhood!\nHelp us find her!",
-                  //TODO Modify regularText style with white color, 12 font size and bold fontweight.
+                  "🐶 is lost in your neighborhood!\nHelp us find her!\n",
+                  //TODO Modify regularText style with white color, 14 font size and bold fontweight.
                   style: regularText)
             ],
           ),
