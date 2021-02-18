@@ -5,7 +5,7 @@ import 'package:pet_ui/widgets/lost_dog_card.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

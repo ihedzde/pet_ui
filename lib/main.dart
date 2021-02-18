@@ -3,7 +3,7 @@ import './pages/homepage.dart';
 void main() {
   runApp(MyApp());
 }
-
+//For local web(NO-CORS required) run use "--web-renderer html" flag.
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

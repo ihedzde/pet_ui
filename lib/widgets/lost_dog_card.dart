@@ -5,7 +5,7 @@ class LostDogCard extends StatelessWidget {
   final Color bgColor;
   final String dogName;
   const LostDogCard({
-    Key key,
+    Key? key,
     this.bgColor = Colors.teal,
     this.dogName = ''
   }) : super(key: key);
