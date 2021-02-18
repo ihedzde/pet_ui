@@ -14,6 +14,8 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     //TODO add home and search tabs.
+    HomeTab(),
+    SearchTab(),
     Container(height: 300, width: 400, color: Colors.teal),
     Container(height: 300, width: 400, color: Colors.pink),
     Container(height: 300, width: 400, color: Colors.cyan),
@@ -21,7 +23,9 @@ class _HomePageState extends State<HomePage> {
     Container(height: 300, width: 400, color: Colors.purple),
   ];
   void _changeIndex(int value) {
-      //TODO Update currentIndex
+      setState((){
+        _currentIndex = value;
+      });
   }
 
   @override
@@ -29,7 +33,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: SafeArea(child: _children[_currentIndex]),
-      bottomNavigationBar: kIsWeb //Platform.isAndroid - doesn't work on Web builds
+      bottomNavigationBar: kIsWeb || Platform.isIOS
       //TODO choose bottomNavBar
           ? CupertinoTabBar(
               currentIndex: _currentIndex,
