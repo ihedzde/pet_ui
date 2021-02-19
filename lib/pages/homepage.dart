@@ -21,9 +21,7 @@ class _HomePageState extends State<HomePage> {
     Container(height: 300, width: 400, color: Colors.purple),
   ];
   void _changeIndex(int value) {
-      setState((){
-        _currentIndex = value;
-      });
+      //TODO change _currentIndex
   }
 
   @override
