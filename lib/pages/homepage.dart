@@ -14,8 +14,6 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     //TODO add home and search tabs.
-    HomeTab(),
-    SearchTab(),
     Container(height: 300, width: 400, color: Colors.teal),
     Container(height: 300, width: 400, color: Colors.pink),
     Container(height: 300, width: 400, color: Colors.cyan),
